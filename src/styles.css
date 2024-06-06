@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+html, body{
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+}
+.cursor{
+    cursor: pointer;
+}
+
+.no-border{
+    border: 0;
+}
+
+a {
+    cursor: pointer;
+}
+li > a {
+    cursor: pointer;
+}

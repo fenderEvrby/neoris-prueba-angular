@@ -1,0 +1,55 @@
+<div class="container mt-3">
+    <div class="bg-dark text-white fs-3 p-2">Datos del usuario</div>
+    <form class="border px-2" [formGroup]="formularioUsuario" (ngSubmit)="guardar()">
+        <div class="mt-3 row">
+            <label for="imagen" class="col-md-2 form-label">Seleccione una imágen</label>
+            <div class="col-md-10">
+                <input class="form-control" type="file" id="imagen" (change)="onFileChange($event)">
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <label for="nombre" class="col-md-2 form-label">Nombre</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" placeholder="Nombe" id="nombre" formControlName="nombre">
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <label for="email" class="col-md-2 form-label">Email</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" placeholder="Email" id="email" formControlName="email">
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <label for="contrasena" class="col-md-2 form-label">Contraseña</label>
+            <div class="col-md-10">
+                <input class="form-control" type="password" placeholder="Contraseña" id="contrasena" formControlName="password">
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <label for="confirmarContrasena" class="col-md-2 form-label">Confirmar contraseña</label>
+            <div class="col-md-10">
+                <input class="form-control" type="password" placeholder="Confirmar contraseña" id="confirmarContrasena" formControlName="confirmar">
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <label for="rol" class="col-md-2 form-label">Rol</label>
+            <div class="col-md-10">
+                <select class="form-select" formControlName="rol">
+                    <option value="Administrador">Administrador</option>
+                    <option value="Recepcionista">Recepcionista</option>
+                </select>
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <label for="fechAlta" class="col-md-2 form-label">Fecha de alta</label>
+            <div class="col-md-10">
+                <input if="fechAlta" class="form-control no-border" formControlName="fechaAlta" readonly />
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-end my-3">
+            <button class="btn btn-danger" type="submit" routerLink="/usuarios">Cancelar</button>&nbsp;&nbsp;
+            <!-- <button class="btn btn-success" type="submit">Guardar</button> -->
+            <button class="btn btn-success" type="submit" [disabled]="formularioUsuario.invalid">Guardar</button>
+        </div>
+    </form>
+</div>

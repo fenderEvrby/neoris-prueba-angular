@@ -1,0 +1,14 @@
+<form [formGroup]="formularioLogin" (ngSubmit)="login()">
+    <div class="container">
+        <div class="bg-dark p-3 text-white">Iniciar sesión</div>
+        <div class="bg-light p-2">
+            <span class="form-label">Email</span>
+            <input class="form-control" type="email" placeholder="Email" formControlName="email" />
+            <span class="form-label">Contraseña</span>
+            <input class="form-control" type="password" placeholder="Contraseña" formControlName="password" />
+        </div>
+        <div class="col-12 d-flex justify-content-end pe-2">
+            <button class="btn btn-success" type="submit" [disabled]="formularioLogin.invalid">Login</button>
+        </div>
+    </div>
+</form>
